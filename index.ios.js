@@ -7,8 +7,6 @@ const {
   Text
 } = require('react-native');
 const Api = require('./src/api');
-var createFragment = require('react-addons-create-fragment');
-
 const Weather = React.createClass({
 
   getInitialState() {

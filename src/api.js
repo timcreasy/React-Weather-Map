@@ -1,3 +1,5 @@
+const _ = require('lodash');
+
 let kelvinToFahrenheit = (kelvin) => {
   return Math.round((kelvin - 273.15) * 1.8 + 32) + ' ˚F';
 }
@@ -15,7 +17,7 @@ module.exports = (latitude, longitude) => {
       return {
         city: weatherData.name,
         temperature: kelvinToFahrenheit(weatherData.main.temp),
-        description: weatherData.weather[0].description
+        description: _.capitalize(weatherData.weather[0].description)
       };
     })
     .catch(err => console.log(err));
